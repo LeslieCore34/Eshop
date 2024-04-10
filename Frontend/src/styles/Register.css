@@ -1,0 +1,24 @@
+.container-registration {
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.label {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}

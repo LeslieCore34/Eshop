@@ -1,0 +1,41 @@
+.NavBar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 2em;
+  width: 100vw;
+  background-color: rgb(28, 28, 28);
+  z-index: +100;
+  position: fixed; /* Modifier la position à fixed */
+  top: 0; /* Ancre la barre de navigation en haut de la page */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  color: white;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  justify-content: space-between;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  justify-content: space-around;
+}
+.siteTitle {
+  margin-left: 1em;
+  margin-top: 4px;
+}
+.link {
+  color: white;
+  border: 1px inset white;
+  padding: 2px 4px 2px 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
