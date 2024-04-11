@@ -1,0 +1,11 @@
+.single-product-container {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.single-image {
+  height: 150px;
+}

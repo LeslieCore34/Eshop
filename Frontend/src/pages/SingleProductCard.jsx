@@ -1,20 +1,23 @@
-// import { useProductsContext } from "../context/ProductsContext";
+import { useProductsContext } from "../context/ProductsContext";
+import "../styles/SingleProductCard.css";
 
 export default function SingleProductCard() {
-  // const { oneProduct } = useProductsContext();
+  const { oneProduct } = useProductsContext();
+
+  console.log("SinglePAGE oneproduct", oneProduct);
 
   return (
-    // <div>
-    //   {oneProduct.map((details) => (
-    //     <p key={details.id}>{oneProduct.title}</p>
-    //   ))}
-    // </div>
     <>
-      <div>test</div>
-      <div>test</div>
-      <div>test</div>
-      <div>test</div>
-      <div>test</div>
+      <div className="single-product-container">
+        {oneProduct.length > 0 && (
+          <>
+            <p key={oneProduct.id}>{oneProduct[0].title}</p>
+            <img src={oneProduct.image} alt="product image" />
+            <p className="price">{oneProduct[0].unit_price} €</p>
+            <p className="desc">{oneProduct[0].description}</p>
+          </>
+        )}
+      </div>
       <div>test</div>
     </>
   );

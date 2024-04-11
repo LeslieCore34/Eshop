@@ -49,11 +49,14 @@ function ProductsContextProvider({ children, apiService }) {
       const response = await apiService.get(
         `${import.meta.env.VITE_BACKEND_URL}/api/product/${id}`
       );
-      setOneProduct(response.data);
+      setOneProduct([response.data]);
     } catch (err) {
-      console.error("erreur de récupuration de l'article", err);
+      console.error("erreur de récupération de l'article", err);
     }
   };
+
+  console.log("context oneproduct", oneProduct);
+  console.log("context allproduct", allProduct);
 
   useEffect(() => {
     fetchAllProduct();
@@ -66,15 +69,15 @@ function ProductsContextProvider({ children, apiService }) {
       allProduct,
       user,
       setUser,
-      addItemToCart,
       cart,
       setCart,
       addedToCart,
+      addItemToCart,
       cartButtonManagement,
-      fetchProductById,
       oneProduct,
+      fetchProductById,
     }),
-    [addedToCart, allProduct, cart, user]
+    [allProduct, user, cart, addedToCart, oneProduct]
   );
 
   return (
