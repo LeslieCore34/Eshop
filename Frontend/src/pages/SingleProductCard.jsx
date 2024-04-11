@@ -4,8 +4,6 @@ import "../styles/SingleProductCard.css";
 export default function SingleProductCard() {
   const { oneProduct } = useProductsContext();
 
-  console.log("SinglePAGE oneproduct", oneProduct);
-
   return (
     <>
       <div className="single-product-container">

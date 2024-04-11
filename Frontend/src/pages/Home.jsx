@@ -4,16 +4,13 @@ import { useProductsContext } from "../context/ProductsContext";
 import ProductCard from "../components/ProductCard";
 
 export default function Home() {
-  const { allProduct, fetchProductById, oneProduct } = useProductsContext();
+  const { allProduct, fetchProductById } = useProductsContext();
   const navigate = useNavigate();
 
   const onClick = (id) => {
     fetchProductById(id);
     navigate("/product");
   };
-
-  console.log("home oneproduct", oneProduct);
-  console.log("home allproduct", allProduct);
 
   return (
     <div className="containerforproduct">

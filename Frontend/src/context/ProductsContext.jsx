@@ -55,9 +55,6 @@ function ProductsContextProvider({ children, apiService }) {
     }
   };
 
-  console.log("context oneproduct", oneProduct);
-  console.log("context allproduct", allProduct);
-
   useEffect(() => {
     fetchAllProduct();
 
