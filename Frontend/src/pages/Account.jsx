@@ -6,19 +6,23 @@ function Account() {
   const givenData = useLoaderData();
   const [user] = useState(givenData?.preLoadUser?.data || {});
   return (
-    <div className="account-container">
-      <div>Mon compte</div>
-      <div>
-        {" "}
-        Account info
-        <p>{user.name}</p>
-        <p>{user.email}</p>
-        <p>{user.lastname}</p>
-        <p>{user.street}</p>
-        <p>{user.postcode}</p>
-        <p>{user.telephone}</p>
+    <>
+      <div className="account-container">
+        <div className="account-small-container">
+          <div className="myaccount">Mon compte :</div>
+          <div className="data">
+            <p>Prénom : {user.name}</p>
+            <p>Email : {user.email}</p>
+            <p>Nom : {user.lastname}</p>
+            <p>Rue : {user.street}</p>
+            <p>Code postal : {user.postcode}</p>
+            <p>Téléphone : {user.telephone}</p>
+          </div>
+          <button type="button">Modifier mes données</button>
+        </div>
+        <p className="my-order">Mes commandes :</p>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -6,11 +6,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` VARCHAR(100) NOT NULL,
   `lastname` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
-  `password` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(150) NOT NULL,
   `street` VARCHAR(255) NOT NULL, 
-  `postcode` VARCHAR(20) NOT NULL,
+  `postcode` VARCHAR(150) NOT NULL,
   `city` VARCHAR(100) NOT NULL,  
-  `telephone` VARCHAR(20) NOT NULL, 
+  `telephone` VARCHAR(20),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
