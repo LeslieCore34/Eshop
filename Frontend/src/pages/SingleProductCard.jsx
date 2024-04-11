@@ -9,14 +9,19 @@ export default function SingleProductCard() {
       <div className="single-product-container">
         {oneProduct.length > 0 && (
           <>
-            <p key={oneProduct.id}>{oneProduct[0].title}</p>
-            <img src={oneProduct.image} alt="product image" />
-            <p className="price">{oneProduct[0].unit_price} €</p>
+            <p key={oneProduct.id} className="single-title">
+              {oneProduct[0].title}
+            </p>
+            <img
+              src={oneProduct[0].image}
+              alt="product image"
+              className="single-image"
+            />
+            <p className="single-price">{oneProduct[0].unit_price} €</p>
             <p className="desc">{oneProduct[0].description}</p>
           </>
         )}
       </div>
-      <div>test</div>
     </>
   );
 }
