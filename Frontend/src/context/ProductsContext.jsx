@@ -8,6 +8,7 @@ const ProductsContext = createContext();
 function ProductsContextProvider({ children, apiService }) {
   const [user, setUser] = useState({});
   const [allProduct, setAllProduct] = useState([]);
+  const [oneProduct, setOneProduct] = useState([]);
   const [cart, setCart] = useState([]);
   const [addedToCart, setAddedToCart] = useState(false);
 
@@ -43,8 +44,21 @@ function ProductsContextProvider({ children, apiService }) {
     }
   };
 
+  const fetchProductById = async (id) => {
+    try {
+      const response = await apiService.get(
+        `${import.meta.env.VITE_BACKEND_URL}/api/product/${id}`
+      );
+      setOneProduct(response.data);
+    } catch (err) {
+      console.error("erreur de récupuration de l'article", err);
+    }
+  };
+
   useEffect(() => {
     fetchAllProduct();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const context = useMemo(
@@ -57,8 +71,10 @@ function ProductsContextProvider({ children, apiService }) {
       setCart,
       addedToCart,
       cartButtonManagement,
+      fetchProductById,
+      oneProduct,
     }),
-    [addItemToCart, addedToCart, allProduct, cart, cartButtonManagement, user]
+    [addedToCart, allProduct, cart, user]
   );
 
   return (

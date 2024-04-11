@@ -10,38 +10,26 @@ const browse = async (_, res, next) => {
   }
 };
 
-const read = async (req, res, next) => {
+// const read = async (req, res, next) => {
+//   try {
+//     const item = await tables.item.read(req.params.id);
+
+//     if (item == null) {
+//       res.sendStatus(404);
+//     } else {
+//       res.json(item);
+//     }
+//   } catch (err) {
+//     next(err);
+//   }
+// };
+
+const readOne = async (req, res, next) => {
   try {
-    const item = await tables.item.read(req.params.id);
+    const item = await tables.product.readOneArticle(req.params.id);
 
     if (item == null) {
       res.sendStatus(404);
-    } else {
-      res.json(item);
-    }
-  } catch (err) {
-    next(err);
-  }
-};
-
-const readMenProducts = async (_, res, next) => {
-  try {
-    const item = await tables.product.readMen();
-    if (item == null) {
-      res.sendStatus(404).send("no product found");
-    } else {
-      res.json(item);
-    }
-  } catch (err) {
-    next(err);
-  }
-};
-
-const readWomenProducts = async (_, res, next) => {
-  try {
-    const item = await tables.product.readWomen();
-    if (item == null) {
-      res.sendStatus(404).send("no product found");
     } else {
       res.json(item);
     }
@@ -92,12 +80,38 @@ const destroy = async (req, res, next) => {
   }
 };
 
+const readMenProducts = async (_, res, next) => {
+  try {
+    const item = await tables.product.readMen();
+    if (item == null) {
+      res.sendStatus(404).send("no product found");
+    } else {
+      res.json(item);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+const readWomenProducts = async (_, res, next) => {
+  try {
+    const item = await tables.product.readWomen();
+    if (item == null) {
+      res.sendStatus(404).send("no product found");
+    } else {
+      res.json(item);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   browse,
-  read,
   edit,
   add,
   destroy,
   readMenProducts,
   readWomenProducts,
+  readOne,
 };

@@ -1,12 +1,13 @@
 import { useState } from "react";
+import "../styles/Account.css";
 import { useLoaderData } from "react-router-dom";
 
 function Account() {
   const givenData = useLoaderData();
   const [user] = useState(givenData?.preLoadUser?.data || {});
   return (
-    <div>
-      <div>Account</div>
+    <div className="account-container">
+      <div>Mon compte</div>
       <div>
         {" "}
         Account info
