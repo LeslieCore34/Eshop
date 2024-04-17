@@ -1,16 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
 .containerforproduct {
-  width: 100%;
-  background: #f5f5f5;
-  box-shadow: 5px 5px 15px rgba(186, 126, 126, 0.5);
-  border-radius: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
-  padding-top: 3em;
+  padding-top: 4em;
 }
 
 .small-container-card {
@@ -41,12 +37,13 @@
   color: #ba7e7e;
   letter-spacing: 1px;
   width: 194px;
-  height: 79px;
+  /* height: 79px; */
   text-align: justify;
-  /* display: -webkit-box;
+  display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-  overflow: hidden; */
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin-bottom: 2em;
 }
 
 h2 {
@@ -72,4 +69,22 @@ button {
   letter-spacing: 1px;
   color: #f5f5f5;
   cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+  .containerforproduct {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .containerforproduct {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 40px;
+  }
 }

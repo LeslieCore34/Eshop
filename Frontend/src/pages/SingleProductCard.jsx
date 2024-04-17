@@ -18,7 +18,7 @@ export default function SingleProductCard() {
               className="single-image"
             />
             <p className="single-price">{oneProduct[0].unit_price} €</p>
-            <p className="desc">{oneProduct[0].description}</p>
+            <p className="description">{oneProduct[0].description}</p>
           </>
         )}
       </div>
