@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import { UsersContextProvider } from "./context/UsersContext";
 import Home from "./pages/Home";
 import accountLoader from "./loaders/account.loader";
+import SingleProductCard from "./pages/SingleProductCard";
 
 const apiService = new ApiService();
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/men",
         element: <Men />,
+      },
+      {
+        path: "/product",
+        element: <SingleProductCard />,
       },
       {
         path: "/account",

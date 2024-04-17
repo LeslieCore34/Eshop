@@ -52,7 +52,7 @@ INSERT INTO `category` (`title`) VALUES
 INSERT INTO `product` VALUES
 (1, 1, 'T-Shirt Casual', '22.3', 'Style ajusté, manches longues raglan contrastées, patte de boutonnage henley à trois boutons, tissu léger et doux pour un port respirant et confortable.', 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'),
 (2, 1, 'Veste Homme Cotton', '55.99', 'Superbes vestes d\'extérieur pour le printemps, l\'automne et l\'hiver, adaptées à de nombreuses occasions.', 'https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg'),
-(3, 1, 'T-Shirt Manche Longue', '15.99', 'T-Shirt en cotton ajusté.', 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg'),
+(3, 1, 'T-Shirt Manche Longue', '15.99', 'T-Shirt en cotton ajusté. Col en V et manches longues.', 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg'),
 (4, 1, 'Ensemble Sportswear', '35.99', 'Ensemble sport décontracté.', 'https://cdn.shopify.com/s/files/1/0688/1755/1382/collections/cd_a_neatly_arranged_photo_of_mens_clothes_t-shirt_gray_hoodie__c5a4ebe4-ccb1-4d94-ae56-a1b33b4e71d9_1.png?v=1675456349'),
 (5, 1, 'Ensemble Sportswear', '55.99', 'Ensemble blanc cotton.', 'https://cdn.shopify.com/s/files/1/0688/1755/1382/collections/cd_a_neatly_arranged_photo_of_mens_clothes_t-shirt_gray_hoodie__c5a4ebe4-ccb1-4d94-ae56-a1b33b4e71d9_1.png?v=1675456349'),
 (6, 1, 'Trio baskets courses à pied', '99.99', 'Baskets running, 3 paires.', 'https://cdn.shopify.com/s/files/1/0688/1755/1382/collections/cd_three_pairs_of_neatly_arranged_men_and_womens_running_shoes._f4121e54-2c8a-4ad2-b366-355c0cc4348d_1.png?v=1675461870'),

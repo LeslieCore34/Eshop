@@ -10,18 +10,20 @@ class ItemManager extends AbstractManager {
     return result;
   }
 
-  async readMen() {
-    const [result] = await this.database.query(
-      `SELECT * FROM ${this.table} WHERE category_id = 1`
+  async read(id) {
+    const [rows] = await this.database.query(
+      `select * from ${this.table} where id = ?`,
+      [id]
     );
-    return result;
+    return rows[0];
   }
 
-  async readWomen() {
-    const [result] = await this.database.query(
-      `SELECT * FROM ${this.table} WHERE category_id = 2`
+  async readOneArticle(id) {
+    const [rows] = await this.database.query(
+      `select * from ${this.table} where id = ?`,
+      [id]
     );
-    return result;
+    return rows[0];
   }
 
   async create(item) {
@@ -36,14 +38,6 @@ class ItemManager extends AbstractManager {
       ]
     );
     return result.insertId;
-  }
-
-  async read(id) {
-    const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
-      [id]
-    );
-    return rows[0];
   }
 
   async update(id, item) {
@@ -67,6 +61,20 @@ class ItemManager extends AbstractManager {
       [id]
     );
     return result.affectedRows;
+  }
+
+  async readMen() {
+    const [result] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE category_id = 1`
+    );
+    return result;
+  }
+
+  async readWomen() {
+    const [result] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE category_id = 2`
+    );
+    return result;
   }
 }
 

@@ -31,8 +31,10 @@ router.post("/product", itemControllers.add); // create
 router.get("/product", itemControllers.browse); // read
 router.put("/product/:id", itemControllers.edit); // update
 router.delete("/product/:id", itemControllers.destroy); // delete
+
 router.get("/menproduct", itemControllers.readMenProducts);
 router.get("/womenproduct", itemControllers.readWomenProducts);
+router.get("/product/:id", itemControllers.readOne);
 
 // LOGIN
 router.post("/login", userControllers.postLogin);
