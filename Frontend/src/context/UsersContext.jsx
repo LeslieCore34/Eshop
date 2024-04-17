@@ -20,6 +20,7 @@ function UsersContextProvider({ children, apiService }) {
         )
       );
       alert(`Bienvenu ton inscription est validée`);
+      return navigate("/login");
     } catch (err) {
       alert(err.message);
     }

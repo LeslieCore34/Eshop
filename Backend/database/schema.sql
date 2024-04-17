@@ -6,11 +6,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` VARCHAR(100) NOT NULL,
   `lastname` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
-  `password` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(150) NOT NULL,
   `street` VARCHAR(255) NOT NULL, 
-  `postcode` VARCHAR(20) NOT NULL,
+  `postcode` VARCHAR(150) NOT NULL,
   `city` VARCHAR(100) NOT NULL,  
-  `telephone` VARCHAR(20) NOT NULL, 
+  `telephone` VARCHAR(20),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -58,5 +58,7 @@ INSERT INTO `product` VALUES
 (6, 1, 'Trio baskets courses à pied', '99.99', 'Baskets running, 3 paires.', 'https://cdn.shopify.com/s/files/1/0688/1755/1382/collections/cd_three_pairs_of_neatly_arranged_men_and_womens_running_shoes._f4121e54-2c8a-4ad2-b366-355c0cc4348d_1.png?v=1675461870'),
 (7, 2, 'Veste de ski', '56.99', 'Idéal pour les activités hivernales, veste imperméable et respirante.', 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg'),
 (8, 2, 'Veste en cuir', '105.00', 'Veste en cuir ajustée.', 'https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg'),
-(9, 2, 'Parka bleu nuit', '85.00', 'Parka bleue imperméable et résistante.', 'https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg');
-
+(9, 2, 'Parka bleu nuit', '85.00', 'Parka bleue imperméable et résistante.', 'https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg'),
+(10, 2, 'T-shirt blanc manche courtes', '45.00', 'T-shirt blanc manche courte, en cotton.', 'https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg'),
+(11, 2, 'T-shirt rouge manche courtes', '50.00', 'T-shirt rouge manche courte, ajusté, en cotton.', 'https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg'),
+(12, 2, 'Ensemble jean, T-shirt et basket', '125.00', 'Ensemble décontracté be kind.', 'https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg');
