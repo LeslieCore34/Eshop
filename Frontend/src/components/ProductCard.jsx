@@ -27,11 +27,13 @@ export default function ProductCard({ clothes, onClick }) {
 
   return (
     <div className="small-container-card" onClick={() => handleClickCard()}>
-      <img alt="product selling" src={clothes.image} className="image" />
+      <img alt="product selling" src={clothes.image} className="image-card" />
       <div className="details">
         <h1 className="titlecard">{clothes.title}</h1>
         <h2 className="price">{unitPrice} €</h2>
-        <p className="desc">{clothes.description}</p>
+        <div className="desc-container">
+          <p className="desc">{clothes.description}</p>
+        </div>
         <div className="buttons">
           <button
             type="submit"
