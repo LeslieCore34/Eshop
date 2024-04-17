@@ -1,0 +1,21 @@
+.single-product-container {
+  margin-top: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25px;
+}
+
+.single-image {
+  height: 50vh;
+  width: 32vw;
+}
+
+.single-title {
+  margin-bottom: 1em;
+}
+
+.single-price {
+  margin-top: 1em;
+}

@@ -1,0 +1,76 @@
+.NavBar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 3em;
+  background-color: rgb(196, 195, 195);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  color: #574142;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: row;
+  width: 35%;
+  justify-content: space-between;
+  color: #574142;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: row;
+  width: 35%;
+  justify-content: space-around;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body,
+html {
+  overflow: hidden;
+}
+
+body {
+  background-color: #f8fff4;
+  color: black;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 20px;
+  margin-top: 3em;
+}
+
+.account-small-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.myaccount {
+  margin-bottom: 1em;
+  font-size: 25px;
+}
+
+.data {
+  margin-bottom: 1em;
+}
+
+.my-order {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}/*# sourceMappingURL=main.css.map */
