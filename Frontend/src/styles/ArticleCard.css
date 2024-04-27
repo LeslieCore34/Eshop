@@ -6,7 +6,7 @@
   grid-template-rows: auto;
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
-  padding-top: 4em;
+  padding-top: 5em;
   padding-bottom: 2em;
   gap: 30px;
 }
@@ -25,7 +25,7 @@
 }
 
 .titlecard {
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 17px;
   width: 70%;
   text-align: center;
@@ -56,13 +56,13 @@
 }
 
 img {
-  width: 70%;
-  height: 56%;
+  width: 43%;
+  height: 43%;
   border-radius: 8px;
 }
 
 button {
-  background-color: #6a9700;
+  background-color: #fb5a59;
   color: #f5f5f5;
   padding: 6px;
   display: inline-block;
@@ -75,6 +75,7 @@ button {
   padding-left: 2px;
   cursor: pointer;
   width: 208px;
+  height: 30px;
 }
 
 @media screen and (min-width: 500px) {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/ShoppingCart.css";
 
 export default function ShoppingCart() {
   const [newCart, setNewCart] = useState([]);
@@ -30,15 +31,14 @@ export default function ShoppingCart() {
 
   return (
     <>
-      <div>
+      <div className="cart-container">
         <h2>Panier</h2>
         {newCart.map((item, index) => (
           <div key={item.id}>
-            <h1>{item.title}</h1>
+            <h1 className="cart-title">{item.title}</h1>
             <p>{item.image}</p>
-            <p>{item.unit_price}</p>
-
-            <label htmlFor="quantity">Quantité</label>
+            <p className="cart-price">Unit price : {item.unit_price}</p>
+            <label htmlFor="cart-quantity">Quantité</label>
             <select
               name="quantityone"
               id="quantityid"
@@ -53,8 +53,10 @@ export default function ShoppingCart() {
         ))}
       </div>
 
-      <div>Sous-total</div>
-      <p>{calculateTotal(newCart, articleQuantity)} €</p>
+      <div className="cart-total">Total</div>
+      <p className="cart-total-price">
+        {calculateTotal(newCart, articleQuantity)} €
+      </p>
     </>
   );
 }
