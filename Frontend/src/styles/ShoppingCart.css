@@ -1,0 +1,18 @@
+.cart-container {
+  padding-top: 3em;
+  height: 80vh;
+}
+
+.cart-title {
+  margin-top: 1em;
+}
+
+.cart-price {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-total {
+  font-size: 20px;
+  color: darkblue;
+}

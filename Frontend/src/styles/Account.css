@@ -1,14 +1,16 @@
 .account-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-size: 20px;
   margin-top: 3em;
+  height: 100vh;
 }
 
 .account-small-container {
   display: flex;
   flex-direction: column;
+  /* width: 40%; */
 }
 
 .myaccount {
@@ -16,9 +18,25 @@
   font-size: 25px;
 }
 
-.data {
+.formcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 150%;
+  height: 30px;
   margin-bottom: 1em;
 }
+.modify-account {
+  margin-top: 2em;
+}
+
 .my-order {
   display: flex;
   flex-direction: column;
