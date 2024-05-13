@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import "../styles/ShoppingCart.css";
+import { useNavigate } from "react-router-dom";
 
 export default function ShoppingCart() {
   const [newCart, setNewCart] = useState([]);
   const [articleQuantity, setArticleQuantity] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart"));
@@ -27,6 +29,10 @@ export default function ShoppingCart() {
       total += item.unit_price * quantities[index];
     });
     return total;
+  };
+
+  const handleClick = () => {
+    navigate("/payment");
   };
 
   return (
@@ -57,6 +63,7 @@ export default function ShoppingCart() {
       <p className="cart-total-price">
         {calculateTotal(newCart, articleQuantity)} €
       </p>
+      <button onClick={handleClick}>Passer la commande</button>
     </>
   );
 }

@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "../src/App.css";
 
-function App() {
+export default function App() {
   return (
     <main>
       <Navbar />
@@ -12,5 +12,3 @@ function App() {
     </main>
   );
 }
-
-export default App;
