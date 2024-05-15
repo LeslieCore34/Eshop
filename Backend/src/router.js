@@ -1,10 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const env = require("dotenv").config({ path: "../.env" });
 
 const router = express.Router();
-
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const corsOrigin = "http://localhost:3000";
 router.use(
@@ -25,34 +22,68 @@ const userControllers = require("./controllers/userControllers");
 const { authMiddleware } = require("./middlewares/auth.middlewares");
 
 // PAYMENTS
-router.get("/config", (req, res) => {
-  res.send({
-    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+let temporaryCartData = null;
+
+const calculateOrderAmount = (cart, quantities) => {
+  let total = 0;
+  cart.forEach((item, index) => {
+    total += item.unit_price * quantities[index];
   });
+  return total;
+};
+
+// Route pour calculer le montant total de la commande
+router.post("/calculate-order-total", async (req, res) => {
+  try {
+    console.log("Request received for /calculate-order-total");
+
+    const { cart, quantities } = req.body;
+
+    console.log("Received data:", cart, quantities);
+
+    // Stockez temporairement les informations du panier et les quantités
+    temporaryCartData = { cart, quantities };
+
+    // Calculate the order amount using the calculateOrderAmount function
+    const orderAmount = calculateOrderAmount(cart, quantities);
+
+    res.json({ total: orderAmount });
+  } catch (error) {
+    console.error("Error calculating order total:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
+// Route pour créer un PaymentIntent
 router.post("/create-payment-intent", async (req, res) => {
-  // Il faut envoyer avec le POST le productId pour récupérer le/les prix de la base de données
-  const { productId } = req.body;
   try {
-    // Code pour récupérer le prix du produit à partir de la base de données en fonction de l'ID du produit
-    // Supposons que vous avez récupéré le prix du produit dans la variable productPrice
-    const productPrice = 1099; // Exemple de prix du produit (à remplacer par le vrai prix récupéré de la base de données)
-    // Création du paiement avec Stripe
+    if (!temporaryCartData) {
+      throw new Error("Cart data is missing");
+    }
+
+    const { cart, quantities } = temporaryCartData;
+
+    // Calculate the order amount using the calculateOrderAmount function
+    const orderAmount = calculateOrderAmount(cart, quantities);
+
+    // Create a PaymentIntent with the order amount and currency
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: productPrice, // Utilisation du prix du produit récupéré de la base de données
+      amount: orderAmount,
       currency: "eur",
       automatic_payment_methods: {
         enabled: true,
       },
     });
-    // Envoi du client secret en réponse
-    res.json({ clientSecret: paymentIntent.client_secret });
+
+    res.send({
+      clientSecret: paymentIntent.client_secret,
+    });
   } catch (error) {
-    console.error("Error creating payment intent:", error);
-    res
-      .status(500)
-      .json({ error: "An error occurred while creating the payment intent." });
+    console.error("Error creating PaymentIntent:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
@@ -70,6 +101,8 @@ router.delete("/product/:id", itemControllers.destroy); // delete
 router.get("/menproduct", itemControllers.readMenProducts);
 router.get("/womenproduct", itemControllers.readWomenProducts);
 router.get("/product/:id", itemControllers.readOne);
+
+// SHOPPING CART
 
 // LOGIN
 router.post("/login", userControllers.postLogin);

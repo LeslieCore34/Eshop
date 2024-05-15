@@ -14,15 +14,9 @@ import { UsersContextProvider } from "./context/UsersContext";
 import Home from "./pages/Home";
 import accountLoader from "./loaders/account.loader";
 import SingleProductCard from "./pages/SingleProductCard";
-import Payment from "./pages/Payment";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+import StripeWrapper from "./components/StripeWrapper";
 
 const apiService = new ApiService();
-
-const publishableKey = import.meta.env.STRIPE_PUBLISHABLE_KEY;
-
-const stripePromise = loadStripe(publishableKey);
 
 const router = createBrowserRouter([
   {
@@ -45,11 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/payment",
-        element: (
-          <Elements stripe={stripePromise}>
-            <Payment />
-          </Elements>
-        ),
+        element: <StripeWrapper />,
       },
       {
         path: "/home",

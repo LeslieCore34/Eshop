@@ -56,7 +56,7 @@ INSERT INTO `product` VALUES
 (4, 1, 'Ensemble Sportswear', '35.99', 'Ensemble sport décontracté.', 'https://cdn.shopify.com/s/files/1/0688/1755/1382/collections/cd_a_neatly_arranged_photo_of_mens_clothes_t-shirt_gray_hoodie__c5a4ebe4-ccb1-4d94-ae56-a1b33b4e71d9_1.png?v=1675456349'),
 (5, 1, 'Ensemble Sportswear', '55.99', 'Ensemble blanc cotton.', 'https://cdn.shopify.com/s/files/1/0688/1755/1382/collections/cd_a_neatly_arranged_photo_of_mens_clothes_t-shirt_gray_hoodie__c5a4ebe4-ccb1-4d94-ae56-a1b33b4e71d9_1.png?v=1675456349'),
 (6, 1, 'Trio baskets courses à pied', '99.99', 'Baskets running, 3 paires.', 'https://cdn.shopify.com/s/files/1/0688/1755/1382/collections/cd_three_pairs_of_neatly_arranged_men_and_womens_running_shoes._f4121e54-2c8a-4ad2-b366-355c0cc4348d_1.png?v=1675461870'),
-(7, 2, 'Veste de ski', '56.99', 'Idéal pour les activités hivernales, veste imperméable et respirante.', 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg'),
+(7, 2, 'Veste de ski', '56', 'Idéal pour les activités hivernales, veste imperméable et respirante.', 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg'),
 (8, 2, 'Veste en cuir', '105.00', 'Veste en cuir ajustée.', 'https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg'),
 (9, 2, 'Parka bleu nuit', '85.00', 'Parka bleue imperméable et résistante.', 'https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg'),
 (10, 2, 'T-shirt blanc manche courtes', '45.00', 'T-shirt blanc manche courte, en cotton.', 'https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg'),
