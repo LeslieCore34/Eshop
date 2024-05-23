@@ -1,0 +1,24 @@
+.App {
+  margin: 8em;
+}
+
+#submit {
+  margin-top: 80px;
+}
+
+#payment-element {
+  margin-top: 20px; /* Adjust this margin as needed */
+  /* Add other necessary styles to ensure proper positioning */
+}
+
+.p-Select {
+  margin-bottom: 25px;
+}
+
+#Field-countryInput {
+  margin-bottom: 25px;
+}
+
+.p-Select-select {
+  margin-bottom: 25px;
+}
