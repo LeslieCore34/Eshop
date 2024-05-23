@@ -14,6 +14,7 @@ import { UsersContextProvider } from "./context/UsersContext";
 import Home from "./pages/Home";
 import accountLoader from "./loaders/account.loader";
 import SingleProductCard from "./pages/SingleProductCard";
+import StripeWrapper from "./components/StripeWrapper";
 
 const apiService = new ApiService();
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <ShoppingCart />,
+      },
+      {
+        path: "/payment",
+        element: <StripeWrapper />,
       },
       {
         path: "/home",
