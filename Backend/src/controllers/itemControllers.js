@@ -1,14 +1,14 @@
 const tables = require("../tables");
 
-const browse = async (_, res, next) => {
-  try {
-    const items = await tables.product.readAll();
+// const browse = async (_, res, next) => {
+//   try {
+//     const items = await tables.product.readAll();
 
-    res.json(items);
-  } catch (err) {
-    next(err);
-  }
-};
+//     res.json(items);
+//   } catch (err) {
+//     next(err);
+//   }
+// };
 
 // const read = async (req, res, next) => {
 //   try {
@@ -53,17 +53,17 @@ const edit = async (req, res, next) => {
   }
 };
 
-const add = async (req, res, next) => {
-  const item = req.body;
+// const add = async (req, res, next) => {
+//   const item = req.body;
 
-  try {
-    const insertId = await tables.product.create(item);
+//   try {
+//     const insertId = await tables.product.create(item);
 
-    res.status(201).json({ insertId });
-  } catch (err) {
-    next(err);
-  }
-};
+//     res.status(201).json({ insertId });
+//   } catch (err) {
+//     next(err);
+//   }
+// };
 
 const destroy = async (req, res, next) => {
   const { id } = req.params;
@@ -80,31 +80,31 @@ const destroy = async (req, res, next) => {
   }
 };
 
-const readMenProducts = async (_, res, next) => {
-  try {
-    const item = await tables.product.readMen();
-    if (item == null) {
-      res.sendStatus(404).send("no product found");
-    } else {
-      res.json(item);
-    }
-  } catch (err) {
-    next(err);
-  }
-};
+// const readMenProducts = async (_, res, next) => {
+//   try {
+//     const item = await tables.product.readMen();
+//     if (item == null) {
+//       res.sendStatus(404).send("no product found");
+//     } else {
+//       res.json(item);
+//     }
+//   } catch (err) {
+//     next(err);
+//   }
+// };
 
-const readWomenProducts = async (_, res, next) => {
-  try {
-    const item = await tables.product.readWomen();
-    if (item == null) {
-      res.sendStatus(404).send("no product found");
-    } else {
-      res.json(item);
-    }
-  } catch (err) {
-    next(err);
-  }
-};
+// const readWomenProducts = async (_, res, next) => {
+//   try {
+//     const item = await tables.product.readWomen();
+//     if (item == null) {
+//       res.sendStatus(404).send("no product found");
+//     } else {
+//       res.json(item);
+//     }
+//   } catch (err) {
+//     next(err);
+//   }
+// };
 
 module.exports = {
   browse,
