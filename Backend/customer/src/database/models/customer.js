@@ -1,3 +1,5 @@
+// models/user.js
+"use strict";
 module.exports = (sequelize, DataTypes) => {
   const Customer = sequelize.define(
     "Customer",
@@ -37,7 +39,6 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      // Options du modèle
       tableName: "customer",
       timestamps: false,
     }

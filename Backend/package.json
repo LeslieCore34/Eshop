@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "workspaces": [
+  "useWorkspaces": [
     "products",
     "customer",
     "gateway"
@@ -23,12 +23,5 @@
     "start:gateway": "lerna run --scope gateway --stream start",
     "start:customer": "lerna run --scope customer --stream start",
     "start:both": "lerna run --parallel start"
-  },
-  "devDependencies": {
-    "@eslint/compat": "^1.0.1",
-    "@eslint/js": "^9.3.0",
-    "eslint": "^9.3.0",
-    "eslint-plugin-react": "^7.34.1",
-    "globals": "^15.3.0"
   }
 }

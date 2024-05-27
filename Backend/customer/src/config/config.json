@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "leslie",
+    "password": "rosita",
+    "database": "customerservicedb",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "process.env.CUSTOMERSERVICE_DBUSER",
+    "password": "process.env.CUSTOMERSERVICE_DBPASS",
+    "database": "process.env.CUSTOMERSERVICE_DBNAME",
+    "host": "process.env.CUSTOMERSERVICE_DBHOST",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "process.env.CUSTOMERSERVICE_DBUSER",
+    "password": "process.env.CUSTOMERSERVICE_DBPASS",
+    "database": "process.env.CUSTOMERSERVICE_DBNAME",
+    "host": "process.env.CUSTOMERSERVICE_DBHOST",
+    "dialect": "mysql"
+  }
+}

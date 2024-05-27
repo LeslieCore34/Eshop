@@ -14,5 +14,5 @@ app.use("/customers", customerRouter);
 
 // Démarrer le service customer (exemple : port 3001)
 app.listen(3001, () => {
-  console.log("Customer service listening on port 3001");
+  console.log("Customer Service listening on port 3001");
 });

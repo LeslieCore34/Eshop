@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const { APP_SECRET } = require("../config/export");
+const { APP_SECRET } = require("../database/config/export");
 
 //Utility functions
 module.exports.GenerateSalt = async () => {
