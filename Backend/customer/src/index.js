@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const customerRoutes = require("./api"); // Votre fichier de routes
+const customerRouter = require("./api/customerRoutes"); // Votre fichier de routes
 
 const app = express();
 
@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true, limit: "1mb" }));
 app.use(cors());
 
 // Routes
-app.use("/customers", customerRoutes);
+app.use("/customers", customerRouter);
 
 // Démarrer le service customer (exemple : port 3001)
 app.listen(3001, () => {

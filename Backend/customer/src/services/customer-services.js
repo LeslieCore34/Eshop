@@ -1,5 +1,5 @@
-const { UserRepository } = require("../database");
 const { APIError } = require("../utils/app-errors");
+const UserRepository = require("../repository/user-repository");
 const {
   GeneratePassword,
   GenerateSalt,
