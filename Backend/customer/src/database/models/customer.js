@@ -1,45 +1,46 @@
 // models/user.js
-"use strict";
+
+("use strict");
 module.exports = (sequelize, DataTypes) => {
   const Customer = sequelize.define(
     "Customer",
     {
-      customer_id: {
+      id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
-      customer_name: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      customer_lastname: {
+      lastname: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      customer_email: {
+      email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
       },
-      customer_street: {
+      street: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      customer_postcode: {
+      postcode: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      customer_city: {
+      city: {
         type: DataTypes.STRING,
       },
-      customer_telephone: {
+      telephone: {
         type: DataTypes.STRING,
       },
     },
     {
-      tableName: "customer",
+      tableName: "customers",
       timestamps: false,
     }
   );

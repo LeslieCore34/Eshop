@@ -52,14 +52,20 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
-router.get("/profile", async (req, res, next) => {
+router.get("/profile/:id", async (req, res, next) => {
   try {
-    const { _id } = req.user;
-    const data = await service.GetProfile({ _id });
+    const { id } = req.params;
+
+    const data = await service.GetProfile({ id });
+
     return res.json(data);
   } catch (err) {
     next(err);
   }
+});
+
+router.get("/test", (req, res) => {
+  res.send("Customer Service is running");
 });
 
 module.exports = router;

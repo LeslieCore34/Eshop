@@ -1,11 +1,14 @@
+require("dotenv").config();
+
 const config = {
   development: {
     dialect: "mysql",
-    username: process.env.CUSTOMERSERVICE_DBUSER,
-    password: process.env.CUSTOMERSERVICE_DBPASS,
-    database: process.env.CUSTOMERSERVICE_DBNAME,
-    host: process.env.CUSTOMERSERVICE_DBHOST,
-    port: process.env.CUSTOMERSERVICE_DBPORT,
+    username: "leslie",
+    password: "rosita",
+    database: "customerservicedb",
+    host: "127.0.0.1",
+    dialect: "mysql",
+    port: "3306",
     logging: false,
   },
   test: {

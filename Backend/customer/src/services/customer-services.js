@@ -71,7 +71,7 @@ class UserService {
     }
   }
 
-  async GetProfile(id) {
+  async GetProfile({ id }) {
     try {
       const existingCustomer = await this.repository.FindCustomerById({ id });
       return existingCustomer;
