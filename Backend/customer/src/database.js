@@ -6,10 +6,10 @@ const config = require("../../config");
 
 const { DB_USER, DB_HOST, DB_PASSWORD, DB_NAME, DB_PORT } = config;
 
-console.log("DB_USER:", DB_USER);
-console.log("DB_HOST:", DB_HOST);
-console.log("DB_NAME:", DB_NAME);
-console.log("DB_PORT:", DB_PORT);
+// console.log("DB_USER:", DB_USER);
+// console.log("DB_HOST:", DB_HOST);
+// console.log("DB_NAME:", DB_NAME);
+// console.log("DB_PORT:", DB_PORT);
 
 const mysql = require("mysql2/promise");
 
