@@ -65,6 +65,7 @@ router.get("/profile/:id", async (req, res, next) => {
 });
 
 router.get("/test", (req, res) => {
+  console.log("Test endpoint hit");
   res.send("Customer Service is running");
 });
 

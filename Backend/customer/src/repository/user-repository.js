@@ -1,7 +1,7 @@
 const { Customer } = require("../database/models");
 const { APIError } = require("../utils/app-errors");
 
-console.log("trying to print Customer import", Customer);
+// console.log("trying to print Customer import", Customer);
 
 class UserRepository {
   async CreateCustomer({
@@ -55,7 +55,6 @@ class UserRepository {
 
   async FindCustomerById({ id }) {
     try {
-      console.log(`Repository: Finding customer with ID: ${id}`); // Log pour débogage
       const existingCustomer = await Customer.findByPk(id);
       if (!existingCustomer) {
         console.log(`Repository: Customer with ID: ${id} not found`); // Log pour débogage
